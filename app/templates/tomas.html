@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/tests-styles.css">
+    
+    <title>Тест Томаса</title>
+    <script>
+        const test_data = {{ test_data | tojson }};
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Главная</a>
+        <div class="right-links" id="auth-links">
+            <a href="/user/me" id="user-button">Мой профиль</a> | <a href="/user/logout">Выйти</a>
+        </div>
+    </nav> 
+
+    <main>
+            <div class="test-container">
+                <div class="question-card">
+                    <p>Выберите наиболее подходящее утверждение:</p>
+                </div>
+                
+                <div class="answers-container">
+                    <!-- Первый вариант (А) -->
+                    <div class="answer-option">
+                        <input type="radio" 
+                            id="answer_A" 
+                            name="question_pair" 
+                            value="1">
+                        <label for="answer_A">
+                            {{ test_data[0]["question_text"] }}
+                        </label>
+                    </div>
+                    
+                    <!-- Второй вариант (Б) -->
+                    <div class="answer-option">
+                        <input type="radio" 
+                            id="answer_B" 
+                            name="question_pair" 
+                            value="2">
+                        <label for="answer_B">
+                            {{ test_data[0]["answers"][0]["text"] }}
+                        </label>
+                    </div>
+                    
+                    <button class="submit-btn" id="answerBtn">Далее</button>
+                </div>
+            </div>
+    </div>
+    </main>
+<script src="/static/js/tomas.js"></script>
+</body>
+</html>

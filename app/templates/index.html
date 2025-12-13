@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Тесты</title>
+    <script src="/static/js/scripts.js" defer></script>
+    
+</head>
+<body>
+
+    <nav>
+        <div class="left-links">
+            <a href="/">Главная</a>
+        </div>
+        <div class="right-links" id="auth-links">
+            <a href="#" id="login-button">Войти</a>
+            <a href="#" id="register-button">Регистрация</a>
+        </div>
+    </nav>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="login-close">×</span>
+            <h2>Вход</h2>
+            <form class="auth-form" id="LoginForm" method="post">
+                <div>
+                    <input type="text" id="LoginUsername" name="username", placeholder="Введите имя пользователя">
+                </div>
+                <div>
+                    <input type="password" id="LoginPassword" name="password", placeholder="Введите пароль">
+                </div>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="register-close">x</span>
+            <h2>Регистрация</h2>
+            <form class="register-form" id="RegisterForm" method="post">
+                <div>
+                    <input type="text" id="Registername" name="name", placeholder="Введите имя" required>
+                </div>
+                <div>
+                    <input type="text" id="Registerlastname" name="lastname", placeholder="Введите фамилию" required>
+                </div>
+                <div>
+                    <input type="text" id="Registermiddlename" name="middlename", placeholder="Введите отчество" required>
+                </div>
+                <div>
+                    <input type="text" id="Registerusername" name="username", placeholder="Введите имя пользователя" required>
+                </div>
+                <div>
+                    <input type="password" id="Registerpassword" name="password", placeholder="Введите пароль" required>
+                </div>
+                <div>
+                    <input type="password" id="Registerconfirmpassword" name="confirm_password", placeholder="Повторите пароль" required>
+                </div>
+                <button type="submit" name="RegisterSend">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <div class="card-container">
+            <div class="card">
+                <h2>Тест Кейрси</h2>
+                <p>Определите свой тип личности по системе Кейрси.</p>
+                <a href="/test/keyrsi" id="start-keyrsi">Начать тест</a>
+            </div>
+
+            <div class="card">
+                <h2>Мотивационный тест</h2>
+                <p>Узнайте, что вас мотивирует в работе и жизни.</p>
+                <a href="/test/motivacionniy" id="start-motivacionniy">Начать тест</a>
+            </div>
+
+            <div class="card">
+                <h2>Тест Томаса</h2>
+                <p>Определите своё ведущее поведение в конфликтной ситуации по тесту Томаса</p>
+                <a href="/test/tomas" id="start-tomas">Начать тест</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

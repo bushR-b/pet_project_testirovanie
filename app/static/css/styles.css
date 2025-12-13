@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-start; 
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-right: 10px; 
+    border-radius: 5px;
+    transition: background-color 0.3s; 
+}
+
+nav a:hover {
+    background-color: #555; 
+}
+
+.left-links {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin-right: 10px; 
+    border-radius: 5px;
+    transition: background-color 0.3s; 
+}
+
+.right-links {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s; 
+    margin-left: auto;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+        margin-top: 0;
+}
+
+.card a {
+    display: inline-block;
+    background-color: #4b7bec;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.card a:hover {
+    background-color: #3867d6;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0; /* top, right, bottom, left = 0 */
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    max-width: 400px;
+    width: 90%;
+    margin: auto; /* центрирует внутри flex */
+}
+
+.modal.active {
+    display: flex; /* flex включает центрирование через justify/align */
+}
+/* заголовок */
+.modal-content h2 {
+    text-align: center;
+    margin: 0 0 20px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+}
+
+/* поля */
+.modal-content input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-top: 12px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d0;
+    background: #fafafa;
+    font-size: 15px;
+    transition: .25s;
+}
+
+.modal-content input:focus {
+    border-color: #4b7bec;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(75,123,236,.4);
+    outline: none;
+}
+
+/* кнопка */
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 22px;
+    background: #4b7bec;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s ease;
+}
+
+.modal-content button:hover {
+    background: #3867d6;
+}
+
+/* крестик */
+.close {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 26px;
+    color: #7b7b7b;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.close:hover {
+    color: #000;
+}
+
+/* анимация */
+@keyframes modalShow {
+    0% {
+        opacity: 0;
+        transform: translateY(-14px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-container-test {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* ← по горизонтали по центру */
+    justify-content: center; /* ← по вертикали по центру (если нужно) */
+    gap: 20px;
+    min-height: 100vh; /* чтобы центрировало по вертикали всей страницы */
+}
+
+.card-test {
+    width: 80%; 
+    max-width: 800px;
+}

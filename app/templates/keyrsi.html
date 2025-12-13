@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/tests-styles.css">
+    
+    <title>Кейрси</title>
+    <script>
+        const test_data = {{ test_data | tojson }};
+    </script>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Главная</a>
+        <div class="right-links" id="auth-links">
+            <a href="/user/me" id="user-button">Мой профиль</a> | <a href="/user/logout">Выйти</a>
+        </div>
+    </nav> 
+
+<main>
+    <div class="test-container">
+        <div class="question-card">
+            <p>{{ test_data[0]["question_text"] }}</p>
+        </div>
+        
+        <div class="answers-container">
+            {% for answer in test_data[0]["answers"] %}
+            <div class="answer-option">
+                <input type="radio" 
+                       id="answer_{{ answer.id }}" 
+                       name="question_{{ test_data[0]['question_id'] }}" 
+                       value="{{ answer.id }}">
+                <label for="answer_{{ answer.id }}">
+                    {{ answer.text }}
+                </label>
+            </div>
+            {% endfor %}
+            
+            <button class="submit-btn" id="answerBtn">Ответить</button>
+        </div>
+    </div>
+</main>
+<script src="/static/js/tests.js"></script>
+
+</body>
+</html>
+

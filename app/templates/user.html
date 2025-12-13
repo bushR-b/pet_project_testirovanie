@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <title>Профиль</title>
+    <script src="/static/js/user.js" defer></script>
+</head>
+<body>    
+
+    <nav>
+        <a href="/">Главная</a>
+        <div class="right-links" id="auth-links">
+            <a href="/user/me" id="user-button">Мой профиль</a> | <a href="/user/logout">Выйти</a>
+        </div>
+    </nav>
+
+    <main>
+    <table>
+        <tr>
+            <th>Имя:</th>
+            <td>{{ user.name }}</td>
+        </tr>
+        <tr>
+            <th>Фамилия:</th>
+            <td>{{ user.surname }}</td>
+        </tr>
+        <tr>
+            <th>Отчество:</th>
+            <td>{{ user.last_name }}</td>
+        </tr>
+        <tr>
+            <th>Имя пользователя:</th>
+            <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+            <th>Результаты: </th>
+        </tr>
+    </table>
+    <table>       
+        <tr>
+            <td>{{ result[0] }}</td>
+        </tr>
+        <tr>
+            <td>{{ result[1] }}</td>
+        </tr>
+        <tr>
+            <td>{{ result[2] }}</td>
+        </tr></table>
+    </main>
+
+</body>
+</html>
